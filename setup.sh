@@ -1,5 +1,6 @@
 #!/bin/sh
 
+clear
 echo "This is the Privatepaper Installer"
 echo "Installing python-gnome"
 sudo apt-get install python-gnome2 --quiet --yes
