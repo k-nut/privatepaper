@@ -51,7 +51,7 @@ def zenity_picker(title):
 	return unicode(path_to_image).replace("\n", "")
 
 def filepicker(title):
-	if os.path.exists("/usr/bin/zenitfday"):
+	if os.path.exists("/usr/bin/zenity"):
 		return zenity_picker(title)
 	else:
 		path = ""
