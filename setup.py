@@ -24,9 +24,9 @@ def setup():
                 else:
                         print_failure("You have to enter either Yes or No")
         print "Please pick your desired default wallpaper now"
-        default_wallpaper = zenity_picker("Default wallpaper")
+        default_wallpaper = filepicker("Default wallpaper")
         print "Please pick your desired privat wallpaper now"
-        private_wallpaper = zenity_picker("Private wallpaper")
+        private_wallpaper = filepicker("Private wallpaper")
 
 
         with open(os.path.expanduser("~/.privatepaper/settings.ini"), "w") as configfile:
@@ -49,6 +49,16 @@ def print_failure(message):
 def zenity_picker(title):
 	path_to_image = subprocess.check_output(["zenity", "--file-selection", "--title", title])
 	return unicode(path_to_image).replace("\n", "")
+
+def filepicker(title):
+	if os.path.exists("/usr/bin/zenitfday"):
+		return zenity_picker(title)
+	else:
+		path = ""
+		while not os.path.exists(path):
+			path = raw_input("Please enter the full path for the %s: "%(title))
+			path = os.path.expanduser(path)
+			
 
 if __name__=="__main__":
 	setup()

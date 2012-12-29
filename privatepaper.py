@@ -26,7 +26,6 @@ def main():
     client.connect("shutdown-cancelled", shutdown_cancelled)
 
 def session_save_yourself( *args):
-    #Lets try to unmount all truecrypt volumes
     set_default()
     return True
 
