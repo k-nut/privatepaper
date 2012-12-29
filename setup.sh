@@ -26,8 +26,8 @@ fi
 touch ~/.privatepaper/settings.ini
 mkdir ~/privatepaper
 cd ~/privatepaper
-wget --no-check-certificate "https://raw.github.com/k-nut/privatepaper/master/privatepaper.py"
-wget --no-check-certificate "https://raw.github.com/k-nut/privatepaper/master/setup.py"
+wget --no-check-certificate -q "https://raw.github.com/k-nut/privatepaper/master/privatepaper.py"
+wget --no-check-certificate -q "https://raw.github.com/k-nut/privatepaper/master/setup.py"
 echo "Ok, lets start the privatepaper setup. Press return to start"
 read start
 clear
