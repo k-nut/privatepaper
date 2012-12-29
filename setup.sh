@@ -22,6 +22,7 @@ else
 		echo "Ok, well do it without zenity."
 	fi
 fi
+touch ~/.privatepaper/settings.ini
 mkdir ~/privatepaper
 cd ~/privatepaper
 wget --no-check-certificate "https://raw.github.com/k-nut/privatepaper/master/privatepaper.py"
