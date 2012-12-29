@@ -22,6 +22,10 @@ else
 		echo "Ok, well do it without zenity."
 	fi
 fi
+mkdir ~/privatepaper
+cd ~/privatepaper
+wget --no-check-certificate "https://raw.github.com/k-nut/privatepaper/master/privatepaper.py"
+wget --no-check-certificate "https://raw.github.com/k-nut/privatepaper/master/setup.py"
 echo "Ok, lets start the privatepaper setup. Press return to start"
 read start
 clear
