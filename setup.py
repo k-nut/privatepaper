@@ -62,10 +62,10 @@ def filepicker(title):
 			path = raw_input("Please enter the full path for the %s: "%(title))
 			path = os.path.expanduser(path)
 def copy_autostart():
-	with urllib2.urlopen("https://raw.github.com/k-nut/privatepaper/master/privatepaper.desktop") as original:
-		copy = original.read().replace("PATH_TO_PAPER", os.path.expanduser("~/privatepaper/privatepaper.py"))
-		with open(os.path.expanduser("~/.config/autostart/privatepaper.desktop"), "w") as new_autostart:
-			new_autostart.write(copy)
+	original = urllib2.urlopen("https://raw.github.com/k-nut/privatepaper/master/privatepaper.desktop")
+	copy = original.read().replace("PATH_TO_PAPER", os.path.expanduser("~/privatepaper/privatepaper.py"))
+	with open(os.path.expanduser("~/.config/autostart/privatepaper.desktop"), "w") as new_autostart:
+		new_autostart.write(copy)
 			
 
 if __name__=="__main__":
