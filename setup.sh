@@ -1,6 +1,5 @@
 #!/bin/sh
 
-read start
 clear
 echo "This is the Privatepaper Installer"
 echo "Installing python-gnome"

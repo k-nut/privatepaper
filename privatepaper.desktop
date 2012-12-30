@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=python PATH_TO_PAPER
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Privatepaper
+Comment=Change your wallpaper depending on the wifi you are connected to
+

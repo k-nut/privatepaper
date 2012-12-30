@@ -37,7 +37,9 @@ def setup():
                 Config.set("Settings", "private_wallpaper", private_wallpaper)
                 Config.write(configfile)
 
-        print "Ok great, now you only need to add this script to your startup scripts and you wallpaper will be changed"
+	print "I am now setting this to autostart for you"
+	copy_autostart()
+	print_success("Done!")
         print "You can of course allways rerun the setup"
 
 def print_success(message):
@@ -58,6 +60,11 @@ def filepicker(title):
 		while not os.path.exists(path):
 			path = raw_input("Please enter the full path for the %s: "%(title))
 			path = os.path.expanduser(path)
+def copy_autostart():
+	with open("./privatepaper.desktop", "r") as original:
+		copy = original.read().replace("PATH_TO_PAPER", os.path.expanduser("~/privatepaper/privatepaper.py"))
+		with open(os.path.expanduser("~/.config/autostart/privatepaper.desktop"), "w") as new_autostart:
+			new_autostart.write(copy)
 			
 
 if __name__=="__main__":
